@@ -1,0 +1,98 @@
+
+
+
+def objetosc_torusa(R, r):
+    return 2 * math.pi**2 * R * r**2
+while True:
+    print("Wybierz kształt do obliczenia objętości:")
+    print("1. Sześcian")import math
+
+def objetosc_sześcianu(a):
+    return a**3
+
+def objetosc_prostopadloscianu(a, b, c):
+    return a * b * c
+
+def objetosc_stozka(r, h):
+    return (1/3) * math.pi * r**2 * h
+
+def objetosc_walcu(r, h):
+    return math.pi * r**2 * h
+
+def objetosc_kuli(r):
+    return (4/3) * math.pi * r**3
+
+def objetosc_sfery(r):
+    return (4/3) * math.pi * r**3
+
+def objetosc_piramidy(base_area, h):
+    return (1/3) * base_area * h
+
+def objetosc_graniastoslupa(base_area, h):
+    return base_area * h
+
+def objetosc_elipsoidy(a, b, c):
+    return (4/3) * math.pi * a * b * c
+
+    print("2. Prostopadłościan")
+    print("3. Stożek")
+    print("4. Walec")
+    print("5. Kula")
+    print("6. Sfera")
+    print("7. Piramida")
+    print("8. Graniastosłup")
+    print("9. Torus")
+    print("10. Elipsoida")
+    print("0. Wyjście")
+
+    wybor = input("Twój wybór: ")
+
+    if wybor == "0":
+        break
+
+    try:
+        wybor = int(wybor)
+        if 1 <= wybor <= 10:
+            if wybor == 1:
+                a = float(input("Podaj długość boku a: "))
+                print("Objętość sześcianu:", objetosc_sześcianu(a))
+            elif wybor == 2:
+                a = float(input("Podaj długość boku a: "))
+                b = float(input("Podaj długość boku b: "))
+                c = float(input("Podaj długość boku c: "))
+                print("Objętość prostopadłościanu:", objetosc_prostopadloscianu(a, b, c))
+            elif wybor == 3:
+                r = float(input("Podaj promień podstawy: "))
+                h = float(input("Podaj wysokość: "))
+                print("Objętość stożka:", objetosc_stozka(r, h))
+            elif wybor == 4:
+                r = float(input("Podaj promień podstawy: "))
+                h = float(input("Podaj wysokość: "))
+                print("Objętość walca:", objetosc_walcu(r, h))
+            elif wybor == 5:
+                r = float(input("Podaj promień kuli: "))
+                print("Objętość kuli:", objetosc_kuli(r))
+            elif wybor == 6:
+                r = float(input("Podaj promień sfery: "))
+                print("Objętość sfery:", objetosc_sfery(r))
+            elif wybor == 7:
+                base_area = float(input("Podaj pole podstawy piramidy: "))
+                h = float(input("Podaj wysokość: "))
+                print("Objętość piramidy:", objetosc_piramidy(base_area, h))
+            elif wybor == 8:
+                base_area = float(input("Podaj pole podstawy graniastosłupa: "))
+                h = float(input("Podaj wysokość: "))
+                print("Objętość graniastosłupa:", objetosc_graniastoslupa(base_area, h))
+            elif wybor == 9:
+                R = float(input("Podaj promień większy torusa: "))
+                r = float(input("Podaj promień mniejszy torusa: "))
+                print("Objętość torusa:", objetosc_torusa(R, r))
+            elif wybor == 10:
+                a = float(input("Podaj półoś a elipsoidy: "))
+                b = float(input("Podaj półoś b elipsoidy: "))
+                c = float(input("Podaj półoś c elipsoidy: "))
+                print("Objętość elipsoidy:", objetosc_elipsoidy(a, b, c))
+        else:
+            print("Niepoprawny wybór. Wybierz liczbę od 1 do 10 lub 0, aby wyjść.")
+    except ValueError:
+        print("Niepoprawny wybór. Wybierz liczbę od 1 do 10 lub 0, aby wyjść.")
