@@ -1,240 +1,239 @@
-# grarpg
-import random
+from random import randint
 
-player = {
-    "name": "",
-    "level": 1,
-    "health": 100,
-    "max_health": 100,
-    "damage": 10,
-    "experience": 0,
-    "gold": 50,
-    "weapon": "Miecz Drewniany",
-    "armor": "Zwykła Zbroja",
-    "dexterity": 5,
-    "magic_resistance": 10,
-    "strength": 15,
-    "potions": 5,
-    "diamond_armor": False,
-    "completed_quests": [],
-    "inventory": []
-}
+Namew = "Ninja"
+hp_ninja = 5
+atak_ninja = randint(2,3)
+ninja = [Namew,hp_ninja,atak_ninja]
 
-enemies = {
-    "Las": [
-        {"name": "Goblin", "health": 30, "damage": 5, "reward": {"gold": 20, "experience": 10}},
-        {"name": "Szkielet", "health": 50, "damage": 8, "reward": {"gold": 30, "experience": 15}},
-    ],
-    "Jaskinia": [
-        {"name": "Ogr", "health": 80, "damage": 12, "reward": {"gold": 50, "experience": 20}},
-        {"name": "Demon", "health": 100, "damage": 15, "reward": {"gold": 70, "experience": 25}},
-    ],
-    "Wieża Czarownika": [
-        {"name": "Czarownik", "health": 120, "damage": 18, "reward": {"gold": 80, "experience": 30}},
-        {"name": "Smok", "health": 150, "damage": 20, "reward": {"gold": 100, "experience": 40}},
-    ],
-    "Boss": [
-        {"name": "Boss", "health": 500, "damage": 45, "reward": {"gold": 200, "experience": 100}},
-    ]
-}
+Nameq = "Sigma"
+hp_sigma = 3
+atak_sigma = randint(1,2)  
+sigma = [Nameq,hp_sigma,atak_sigma]
 
-shop = {
-    "Miecz Drewniany": {"damage": 10, "price": 20},
-    "Miecz Żelazny": {"damage": 20, "price": 50},
-    "Topór": {"damage": 30, "price": 80},
-    "Łuk": {"damage": 15, "price": 30},
-    "Miecz Magiczny": {"damage": 25, "price": 100, "level_requirement": 3},
-    "Kusza": {"damage": 18, "price": 60, "level_requirement": 2},
-    "Włócznia": {"damage": 30, "price": 120, "level_requirement": 4},
-    "Zwykła Zbroja": {"armor": 5, "price": 30},
-    "Pancerz Krasnoluda": {"armor": 10, "price": 80, "level_requirement": 3},
-    "Diamentowa Zbroja": {"armor": 15, "price": 200, "level_requirement": 5}
-}
+Namet = "Gigachad"
+hp_gigachad = 10
+atak_gigachad = randint(4,5)
+gigachad = [Namet,hp_gigachad,atak_gigachad]
 
-quests = [
-    {"name": "Poszukiwanie Złotego Kamienia", "experience": 20, "gold": 50, "item": "Miecz Magiczny", "level_requirement": 2},
-    {"name": "Ochrona Wioski przed Goblinami", "experience": 30, "gold": 70, "item": "Diamentowa Zbroja", "level_requirement": 4},
-    {"name": "Zabij Smoka w Wieży Czarownika", "experience": 50, "gold": 100, "item": "Smoczy Miecz", "level_requirement": 6}
+Nameg = "Buntownik"
+hp_buntownik = 15
+atak_buntownik = randint(5,7)
+buntownik = [Nameg,hp_buntownik,atak_buntownik]
+
+Namess = "Zolnierz"
+hp_zolnierz = 5
+atak_zolnierz = randint(5,10)
+zolnierz = [Namess,hp_zolnierz,atak_zolnierz]
+
+Namewoj = "Wojownik"
+hp_woj = 8
+atak_woj = randint(3,5)
+wojownik = [Namewoj,hp_woj,atak_woj]
+
+Names = "Bokser"
+hp_bokser = 20
+atak_bokser = randint(5,8)
+bokser = [Names,hp_bokser,atak_bokser]
+
+def ręka():
+    atak = randint(1,3)
+    return atak
+
+def miecz():
+    atak = randint(2,4)
+    return atak
+
+def noga():
+    atak = randint(3,5)
+    return atak
+
+def siekiera():
+    atak = randint(4,6)
+    return atak
+
+def pistolet():
+    atak = randint(5,7)
+    return atak
+
+def wm():
+    atak = randint(6,8)
+    return atak
+
+def wt():
+    atak = randint(7,9)
+    return atak
+
+def poparz():
+    global mana
+    if mana > 5:
+        mana -= 5
+        atak = randint(3,5)
+        return atak
+    else:
+        print("Nie masz many ")
+        return 0
+
+def lightsaber():
+    global mana
+    if mana > 10:
+        mana -= 10
+        atak = randint(4,6)
+        return atak
+    else:
+        print("Nie masz many ")
+        return 0
+
+def fire_ball():
+    global mana
+    if mana > 20:
+        mana -= 20
+        atak = randint(5,7)
+        return atak
+    else:
+        print("Nie masz many ")
+        return 0
+
+ataki =[
+    {
+"1 = Kopnięcie"
+    },
+    {
+"2 = atak nożem",
+    },
+    {
+"3 = uderzenie",
+    },
 ]
 
-def battle(location):
-    if location == "Boss" and player["level"] < 7:
-        print("Nie jesteś wystarczająco silny, aby zmierzyć się z Bossem. Wróć, gdy osiągniesz 7. poziom.")
-        return
+def los():
+    co = randint(1,7)
+    if co == 1:
+        pp = ninja
+    elif co == 2:
+        pp = sigma
+    elif co == 3:
+        pp = gigachad
+    elif co == 4:
+        pp = buntownik
+    elif co == 7:
+        pp = zolnierz
+    elif co == 5:
+        pp = wojownik
+    elif co == 6:
+        pp = bokser
+    return pp
 
-    enemy_index = random.randint(0, len(enemies[location]) - 1)
-    enemy = enemies[location][enemy_index]
-
-    print(f'Walka z {enemy["name"]} (HP: {enemy["health"]}) na {location}')
-    while player["health"] > 0 and enemy["health"] > 0:
-        print(f'{player["name"]} (HP: {player["health"]}) vs {enemy["name"]} (HP: {enemy["health"]})')
-        print("1 - Atakuj")
-        print("2 - Użyj mikstury")
-        print("3 - Ucieknij")
-        action = input("Wybierz akcję: ")
-        if action == "1":
-            perform_attack(enemy)
-        elif action == "2":
-            use_potion()
-        elif action == "3":
-            run_away()
+def wa():
+    print(ataki)
+    co = int(input())
+    if co == 1:
+        return ręka()
+    elif co == 2:
+            return noga()  
+    elif co == 3:
+        if mana > 5:
+            return poparz()
         else:
-            print("Nieprawidłowa akcja. Tracisz turę.")
-        if enemy["health"] > 0:
-            enemy_attack(enemy)
-    if player["health"] > 0:
-        print(f'Pokonałeś {enemy["name"]}! Zdobywasz {enemy["reward"]["gold"]} złota '
-              f'i {enemy["reward"]["experience"]} punktów doświadczenia.')
-        player["gold"] += enemy["reward"]["gold"]
-        player["experience"] += enemy["reward"]["experience"]
-        level_up()
-        check_quest_completion()
-    else:
-        print("Przegrałeś walkę. Koniec gry.")
-
-def perform_attack(enemy):
-    critical_strike = random.randint(1, 10) <= player["dexterity"]
-    damage = player["damage"] * 2 if critical_strike else player["damage"]
-    damage -= enemy.get("armor", 0)
-    enemy["health"] -= max(0, damage)
-    print(f'Zadałeś {damage} obrażeń! (Krytyk: {critical_strike})')
-
-def enemy_attack(enemy):
-    player["health"] -= max(0, enemy["damage"] - player["magic_resistance"])
-    print(f'{enemy["name"]} zadał Ci {enemy["damage"]} obrażeń!')
-
-def use_potion():
-    if player["potions"] > 0:
-        print("Używasz mikstury zdrowia.")
-        player["health"] = min(player["health"] + 20, player["max_health"])
-        player["potions"] -= 1
-        print(f'Twoje zdrowie teraz wynosi {player["health"]}. Pozostało mikstur: {player["potions"]}.')
-    else:
-        print("Nie masz żadnych mikstur.")
-
-def run_away():
-    print("Próbujesz uciec...")
-    escape_chance = random.randint(1, 5) <= player["dexterity"]
-    if escape_chance:
-        print("Udało się uciec z walki!")
-    else:
-        print("Nie udało się uciec. Przeciwnik kontratakuje!")
-
-def buy_weapon():
-    print("Sklep z bronią i zbrojami:")
-    for item, stats in shop.items():
-        print(f'{item} - Cena: {stats.get("price", "Niedostępne")} złota, '
-              f'Obrażenia: {stats.get("damage", "Niedostępne")}, '
-              f'Pancerz: {stats.get("armor", "Niedostępne")}, '
-              f'Leczenie: {stats.get("healing", "Niedostępne")}, '
-              f'Wymagany poziom: {stats.get("level_requirement", 1)}')
-    choice = input("Wybierz broń/zbroję do zakupu (lub Q aby wrócić): ")
-    if choice == "Q":
-        return
-    if choice in shop:
-        if player["gold"] >= shop[choice].get("price", 0):
-            if "level_requirement" in shop[choice] and player["level"] < shop[choice]["level_requirement"]:
-                print("Nie masz wystarczającego poziomu do zakupu tej broni/zbroi.")
-            else:
-                if "damage" in shop[choice]:
-                    print(f'Kupiłeś {choice} za {shop[choice]["price"]} złota.')
-                    player["damage"] = shop[choice]["damage"]
-                    player["weapon"] = choice
-                elif "healing" in shop[choice]:
-                    print(f'Kupiłeś {choice} za {shop[choice]["price"]} złota.')
-                    player["potions"] += 1
-                elif "armor" in shop[choice]:
-                    print(f'Kupiłeś {choice} za {shop[choice]["price"]} złota.')
-                    equip_armor(choice)
-                player["gold"] -= shop[choice]["price"]
+            print("Nie masz many!!")
+            return 0
+    elif co == 4:
+        return noga()
+    elif co == 5:
+        return siekiera()
+    elif co == 6:
+        return pistolet()
+    elif co == 7:
+        return wm()
+    elif co == 8:
+        return wt()
+    elif co == 9:
+        if mana > 10:
+            return siekiera()
         else:
-            print("Nie masz wystarczająco złota.")
-    else:
-        print("Nieprawidłowy wybór.")
-
-def equip_armor(armor_type):
-    if armor_type == "Diamentowa Zbroja" and not player["diamond_armor"]:
-        print(f'Czy na pewno chcesz kupić {armor_type} za {shop[armor_type]["price"]} złota? (Tak/Nie): ')
-        confirmation = input()
-        if confirmation.lower() == "tak":
-            print(f'Kupiłeś {armor_type}.')
-            player["armor"] = armor_type
-            player["diamond_armor"] = True
-            player["inventory"].append(armor_type)
+            print("Nie masz many!!")
+            return 0
+    elif co == 10:
+        if mana > 20:
+            return fire_ball()
         else:
-            print("Anulowano zakup.")
+            print("Nie masz many!!")
+            return 0
     else:
-        print(f'Kupiłeś {armor_type}.')
-        player["armor"] = armor_type
-        player["inventory"].append(armor_type)
+        print("Nie wybrano akcji")
+        return 0
 
-def level_up():
-    if player["experience"] >= player["level"] * 30:
-        player["level"] += 1
-        player["max_health"] += 20
-        player["health"] = player["max_health"]
-        player["damage"] += 5
-        print(f'Awanasujesz na poziom {player["level"]}! Zdrowie zostało zwiększone, '
-              f'otrzymujesz nowe obrażenia i pełne uzdrowienie.')
+def nagroda():
+    new_dictionary = {}
+    dw=int(input("""Witaj! W nagrodę za twoje czyny możesz wybrać nagrodę.
+    1 = SigmaBat
+    2 = GigachadBat
+    3 = KarabinZolnierza
+    4 = KlawiaturaBuntownika
+    5 = BandanaNindzy
+    6 = RekawiceBokserskie
+    7 = OgnistaKula
+    """))
+    while True:
+        if dw == 1:
+            SigmaBat = "sigmabat"
+            new_dictionary["4 = "] = SigmaBat if SigmaBat else "No data"
+            ataki.append(new_dictionary)
+            break
+        elif dw == 2:
+            GigachadBat = "GigachadBat"
+            new_dictionary["5 = "] = GigachadBat if GigachadBat else "No data"
+            ataki.append(new_dictionary)
+            break
+        elif dw == 3:
+            KarabinZolnierza = "KarabinZolnierza"
+            new_dictionary["6 = "] = KarabinZolnierza if KarabinZolnierza else "No data"
+            ataki.append(new_dictionary)
+            break
+        elif dw == 4:
+            KlawiaturaBuntownika = "KlawiaturaBuntownika"
+            new_dictionary["7 = "] = KlawiaturaBuntownika if KlawiaturaBuntownika else "No data"
+            ataki.append(new_dictionary)
+            break
+        elif dw == 5:
+            BandanaNindzy = "BandanaNindzy"
+            new_dictionary["8 = "] = BandanaNindzy if BandanaNindzy else "No data"
+            ataki.append(new_dictionary)
+            break
+        elif dw == 6:
+            RekawiceBokserskie = "RekawiceBokserskie"
+            new_dictionary["9 = "] = RekawiceBokserskie if RekawiceBokserskie else "No data"
+            ataki.append(new_dictionary)
+            break
+        elif dw == 7:
+            OgnistaKula = "OgnistaKula"
+            new_dictionary["10 = "] = OgnistaKula if OgnistaKula else "No data"
+            ataki.append(new_dictionary)
+            break
+        else:
+            print("Brak broni pod danym numerem. Spróbuj ponownie.")
+            return 0   
 
-def check_quest_completion():
-    for quest in quests:
-        if quest["name"] not in player["completed_quests"]:
-            if player["level"] >= quest["level_requirement"]:
-                print(f'Zadanie dostępne: {quest["name"]}')
-                action = input("Czy chcesz podjąć to zadanie? (Tak/Nie): ").lower()
-                if action == "tak":
-                    print(f'Rozpoczynasz zadanie: {quest["name"]}.')
-                    quest_completion(quest)
-                else:
-                    print("Zadanie odrzucone.")
-            else:
-                print(f'Zadanie niedostępne: {quest["name"]} (wymagany poziom {quest["level_requirement"]}).')
-
-def quest_completion(quest):
-    print(f'Wykonujesz zadanie: {quest["name"]}...')
-    print(f'Ukończyłeś zadanie: {quest["name"]}! Otrzymujesz {quest["experience"]} punktów doświadczenia '
-          f'i {quest["gold"]} złota.')
-    player["experience"] += quest["experience"]
-    player["gold"] += quest["gold"]
-    if "item" in quest:
-        print(f'Otrzymujesz przedmiot: {quest["item"]}.')
-        player["inventory"].append(quest["item"])
-    player["completed_quests"].append(quest["name"])
-
-
-while True:
-    print("\n### GRA RPG ###")
-    if not player["name"]:
-        player["name"] = input("Podaj swoją postać: ")
-
-    print(f'{player["name"]} (Poziom: {player["level"]}, Zdrowie: {player["health"]}, '
-          f'Obrażenia: {player["damage"]}, Złoto: {player["gold"]}, Broń: {player["weapon"]}, '
-          f'Zbroja: {player["armor"]}, Mikstury: {player["potions"]}, '
-          f'Diamentowa Zbroja: {"Tak" if player["diamond_armor"] else "Nie"})')
-
-    print("1 - Walcz z przeciwnikiem")
-    print("2 - Kup broń/zbroję")
-    print("3 - Użyj mikstury")
-    print("4 - Sprawdź zlecenia")
-    print("5 - Zakończ grę")
-
-    choice = input("Wybierz akcję: ")
-
-    if choice == "1":
-        location = input("Wybierz lokalizację walki (Las/Jaskinia/Wieża Czarownika/Boss): ")
-        if location not in enemies:
-            print("Nieprawidłowa lokalizacja. Spróbuj ponownie.")
-            continue
-        battle(location)
-    elif choice == "2":
-        buy_weapon()
-    elif choice == "3":
-        use_potion()
-    elif choice == "4":
-        check_quest_completion()
-    elif choice == "5":
-        print("Dziękujemy za grę. Do widzenia!")
-        break
-    else:
-        print("Nieprawidłowa akcja. Spróbuj ponownie.")
+życie = 100
+mana = 100
+name = input("Jak się nazywasz: ")
+print(F"Witaj {name}! Twoim zadaniem będzie zyskanie chwały. Powodzenia szefie!")
+wynik = 0
+while życie > 0:
+    przeciwnik = los()
+    while przeciwnik[1] > 0:
+        print(f"{name} walczy teraz z {przeciwnik[0]}")
+        print(f"Przeciwnik ma aktualnie {przeciwnik[1]} hp i zadaje ci {przeciwnik[2]} obrażeń")
+        życie = życie - przeciwnik[2]
+        if życie < 0:
+            break
+        print(f"Zostało ci {życie} hp i {mana} many")
+        atak  = wa()
+        przeciwnik[1] = przeciwnik[1] - atak
+        print(f"Zadałeś {atak} obrażeń")
+    print('Zabiłeś przeciwnika!!!')
+    wynik += 1
+    if wynik % 5 == 0:
+        nagroda()
+else:
+    print("Giniesz!")
+print(f"Pokonałeś {wynik} przeciwników")
